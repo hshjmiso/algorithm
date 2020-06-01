@@ -1,3 +1,13 @@
+// 크레인 인형뽑기 게임
+/*
+[[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
+
+[00000]
+[00103]
+[02501]
+[42442]
+[35131]
+*/
 function solution(board, moves) {
     const basket = [];
     let answer = 0;
@@ -41,7 +51,7 @@ const transpose = matrix =>
         []
     );
 
-const solution2 = (board, moves) => {
+const solution = (board, moves) => {
     const stacks = transpose(board).map(row =>
         row.reverse().filter(el => el !== 0)
     );

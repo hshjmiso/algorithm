@@ -7,3 +7,15 @@
   * [solution](./level1/17681.js) - [String.padStart()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart), [Bitwise Operators](https://www.w3schools.com/js/js_bitwise.asp)
 * [실패율](https://programmers.co.kr/learn/courses/30/lessons/42889)
   * [solution](./level1/42889.js)
+
+## Level2
+* [기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586)
+  * [solution](./level2/42586.js)
+* [멀쩡한 사각형](https://programmers.co.kr/learn/courses/30/lessons/62048)
+  * [solution](./level2/62048.js)
+* [탑](https://programmers.co.kr/learn/courses/30/lessons/42588)
+  * [solution](./level2/42588.js)
+* [124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899)
+  * [solution](./level2/12899.js)
+* [카펫](https://programmers.co.kr/learn/courses/30/lessons/42842)
+  * [solution](./level2/42842.js)

@@ -1,3 +1,7 @@
+// 실패율
+/*
+(a, b) => b.rate === a.rate ? a.i - b.i : b.rate - a.rate
+*/
 function solution(N, stages) {
     let answer = new Array(N);
     let len = stages.length;
@@ -13,5 +17,5 @@ function solution(N, stages) {
         len -= count;
     }
     
-    return answer.sort((a, b) => b.rate - a.rate).map(v => v.i);
+    return answer.sort((a, b) => b.rate === a.rate ? a.i - b.i : b.rate - a.rate).map(v => v.i);
 }
