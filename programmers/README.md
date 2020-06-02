@@ -15,6 +15,8 @@
   * [solution](./level2/62048.js)
 * [탑](https://programmers.co.kr/learn/courses/30/lessons/42588)
   * [solution](./level2/42588.js)
+* [스킬트리](https://programmers.co.kr/learn/courses/30/lessons/49993)
+  * [solution](./level2/49993.js) - [String.prototype.indexOf()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf), [String.prototype.includes()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/includes), [Array Includes() and IndexOf() Methods in JavaScript](https://medium.com/better-programming/array-includes-method-in-javascript-38d919b59c41)
 * [124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899)
   * [solution](./level2/12899.js)
 * [카펫](https://programmers.co.kr/learn/courses/30/lessons/42842)
