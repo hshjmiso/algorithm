@@ -23,3 +23,7 @@
   * [solution](./level2/42842.js)
 * [다음 큰 숫자](https://programmers.co.kr/learn/courses/30/lessons/12911)
   * [solution](./level2/12911.js)
+* [피보나치 수](https://programmers.co.kr/learn/courses/30/lessons/12945)
+  * [solution](./level2/12945.js)
+* [영어 끝말잇기](https://programmers.co.kr/learn/courses/30/lessons/12981)
+  * [solution](./level2/12981.js) - [Math.ceil()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil), [Math.round()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/round), [Math.floor()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
