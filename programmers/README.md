@@ -1,5 +1,19 @@
 # programmers
 
+* 코딩테스트 고득점 Kit
+  * 해시
+  * [스택](./kit/stack/stack.js)/큐
+  * 힙(Heap)
+  * 정렬
+  * 완전탐색
+  * 탐욕법(Greedy)
+  * 동적계획법(Dynamic Programming)
+  * 깊이/너비 우선 탐색(DFS/BFS)
+  * 이분탐색
+  * 그래프
+* [Level1](#level1)
+* [Level2](#level2)
+
 ## Level1
 * [크레인 인형뽑기 게임](https://programmers.co.kr/learn/courses/30/lessons/64061)
   * [solution](./level1/64061.js)
