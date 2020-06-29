@@ -2,7 +2,7 @@
 
 * 코딩테스트 고득점 Kit
   * 해시
-  * [스택](./kit/stack/stack.js)/큐
+  * [스택](./kit/stack/stack.mjs)/[큐](./kit/queue/queue.mjs)
   * 힙(Heap)
   * 정렬
   * 완전탐색
