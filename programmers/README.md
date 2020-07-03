@@ -13,6 +13,8 @@
   * 그래프
 * [Level1](#level1)
 * [Level2](#level2)
+* 기타
+  * [집합](./kit/set/set.mjs)
 
 ## Level1
 * [크레인 인형뽑기 게임](https://programmers.co.kr/learn/courses/30/lessons/64061)
@@ -95,8 +97,6 @@
   * [solution](./level1/17682.js)
 
 ## Level2
-* [기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586)
-  * [solution](./level2/42586.js)
 * [멀쩡한 사각형](https://programmers.co.kr/learn/courses/30/lessons/62048)
   * [solution](./level2/62048.js) - [유클리드 호제법](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95)
 * [탑](https://programmers.co.kr/learn/courses/30/lessons/42588)
@@ -105,6 +105,10 @@
   * [solution](./level2/49993.js) - [String.prototype.indexOf()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf), [String.prototype.includes()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/includes), [Array Includes() and IndexOf() Methods in JavaScript](https://medium.com/better-programming/array-includes-method-in-javascript-38d919b59c41)
 * [124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899)
   * [solution](./level2/12899.js)
+* [쇠막대기](https://programmers.co.kr/learn/courses/30/lessons/42585)
+  * [solution](./level2/42585.js)
+* [기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586)
+  * [solution](./level2/42586.js)
 * [카펫](https://programmers.co.kr/learn/courses/30/lessons/42842)
   * [solution](./level2/42842.js)
 * [튜플](https://programmers.co.kr/learn/courses/30/lessons/64065)
