@@ -1,7 +1,7 @@
 # programmers
 
 * 코딩테스트 고득점 Kit
-  * 해시
+  * [해시](./kit/hash/hashTable.mjs)
   * [스택](./kit/stack/stack.mjs)/[큐](./kit/queue/queue.mjs)
   * 힙(Heap)
   * 정렬
