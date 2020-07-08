@@ -32,12 +32,12 @@
  * 그 외에는 배열[i][j] === 0이다.
  */
 
- /**
-  * 인접 리스트(adjacency list)
-  * 인접 리스트는 각 정점별로 인접 정점들의 리스트를 저장하는데, 
-  * 이를 자료 구조로 표현하는 방법은 리스트(배열), 연결 리스트, 해시 맵, 딕셔너리 중 
-  * 어느 것을 채택하는냐에 따라 달라진다.
-  */
+/**
+ * 인접 리스트(adjacency list)
+ * 인접 리스트는 각 정점별로 인접 정점들의 리스트를 저장하는데, 
+ * 이를 자료 구조로 표현하는 방법은 리스트(배열), 연결 리스트, 해시 맵, 딕셔너리 중 
+ * 어느 것을 채택하는냐에 따라 달라진다.
+ */
 
 /**
  * 근접 행렬(incidence matrix)
@@ -46,7 +46,47 @@
  * 보통 정점보다 간선이 상대적으로 많은 그래프에서 저장 공간과 메모리를 절약하기 위해 사용한다.
  */
 
+ /**
+ * 너비 우선 탐색(BFS)
+ * 정점을 큐에 저장함으로써 가장 오래전에 방문하지 않은 정점을 가장 먼저 방문한다.
+ * BFS 알고리즘은 시작 정점에서 순회를 시작해 그래프를 한 번에 한 층씩,
+ * 이웃한 정점(인접 정점)들을 모두 방문한다.
+
+ * 큐 Q를 생성한다.
+ * v를 '방문했음'으로 표시하고 Q에 v를 추가한다.
+ * Q는 비어 있지 않으므로 다음 과정을 밟는다.
+   * u를 Q에서 삭제한다.
+   * u를 '방문했음'으로 표시한다.
+   * u의 '방문하지 않은' 모든 인접 정점을 Q에 넣는다.
+   * u를 '탐색했음'으로 표시한다.
+ * v에서 u까지의 거리: d[u]
+ * v에서 다른 모든 정점 u까지의 최단 경로를 계산하기 위한 선행자(predecessor):pred[u]
+*/
+
+/**
+ * 다익스트라 알고리즘(Dijkstra's algorithm): 단일 소스(single-source) 최단 경로 문제 알고리즘
+ * 벨만-포드 알고리즘(Bellman-Ford algorithm): 간선 가중치가 음의 값일 경우의 단일 소스 문제 알고리즘
+ * A* 검색 알고리즘(A* search algorithm): 검색 속도를 빠르게 하려고 휴리스틱(heuristics)을 이용해 
+ * 정점의 단일 쌍에 대한 최단 경로를 찾는 알고리즘
+ * 플로이드-워셜 알고리즘(Floyd-Warshall algorithm): 모든 정점 간의 최단 경로를 찾는 알고리즘
+ */
+
+/**
+ * 깊이 우선 탐색(DFS)
+ * DFS 알고리즘은 시작 정점에서 출발해 동일 경로의 마지막 정점까지 순회하고 다시 반대 방향으로 돌아와 다음 경로를 찾아가는 식으로 진행된다.
+ * DFS에서는 시작 정점이 필요 없다. 그래프 G에서 미방문 상태의 정점 v를 차례로 방문한다.
+ 
+ * v를 '방문했음'으로 표시한다.
+ * '방문하지 않은' v의 인접 정점 w에 대해
+   * 정점 w를 방문한다.
+ * v를 '탐색했음'으로 표시한다.
+ * u의 방문 시간: d[u]
+ * u의 탐색 시간: f[u]
+ * u의 선행자: p[u]
+ */
+
 import Dictionary from '../dictionary/dictionary.mjs';
+import Queue from '../queue/queue.mjs';
 
 export default class Graph {
     constructor() {
@@ -76,5 +116,48 @@ export default class Graph {
             s += '\n';
         }
         return s;
+    }
+
+    initializeColor() {
+        let vertices = this.vertices;
+        let color = [];
+        for (let i = 0, len = vertices.length; i < len; i++) {
+            color[vertices[i]] = 'white';
+        }
+        return color;
+    }    
+
+    bfs(v) {
+        let vertices = this.vertices;
+        let color = this.initializeColor();
+        let queue = new Queue();
+        let d = [];
+        let pred = [];
+        queue.enqueue(v);
+
+        for (let i = 0, len = vertices.length; i < len; i++) {
+            d[vertices[i]] = 0;
+            pred[vertices[i]] = null;
+        }
+
+        while(!queue.isEmpty()) {
+            let u = queue.dequeue();
+            let neighbors = this.adjList.get(u);
+            color[u] = 'grey';
+            for (let i = 0, len = neighbors.length; i < len; i++) {
+                let w = neighbors[i];
+                if (color[w] === 'white') {
+                    color[w] = 'grey';
+                    d[w] = d[u] + 1;
+                    pred[w] = u;
+                    queue.enqueue(w);
+                }
+            }
+            color[u] = 'black';
+        }
+        return {
+            distance: d,
+            predecessors: pred,
+        };
     }
 }

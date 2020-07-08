@@ -8,7 +8,7 @@
   * 완전탐색
   * 탐욕법(Greedy)
   * 동적계획법(Dynamic Programming)
-  * 깊이/너비 우선 탐색(DFS/BFS)
+  * [깊이/너비 우선 탐색(DFS/BFS)](./kit/graph/graph.mjs)
   * 이분탐색
   * [그래프](./kit/graph/graph.mjs)
 * [Level1](#level1)
