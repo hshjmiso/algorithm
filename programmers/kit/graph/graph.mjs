@@ -51,17 +51,7 @@
  * 정점을 큐에 저장함으로써 가장 오래전에 방문하지 않은 정점을 가장 먼저 방문한다.
  * BFS 알고리즘은 시작 정점에서 순회를 시작해 그래프를 한 번에 한 층씩,
  * 이웃한 정점(인접 정점)들을 모두 방문한다.
-
- * 큐 Q를 생성한다.
- * v를 '방문했음'으로 표시하고 Q에 v를 추가한다.
- * Q는 비어 있지 않으므로 다음 과정을 밟는다.
-   * u를 Q에서 삭제한다.
-   * u를 '방문했음'으로 표시한다.
-   * u의 '방문하지 않은' 모든 인접 정점을 Q에 넣는다.
-   * u를 '탐색했음'으로 표시한다.
- * v에서 u까지의 거리: d[u]
- * v에서 다른 모든 정점 u까지의 최단 경로를 계산하기 위한 선행자(predecessor):pred[u]
-*/
+ */
 
 /**
  * 다익스트라 알고리즘(Dijkstra's algorithm): 단일 소스(single-source) 최단 경로 문제 알고리즘
@@ -75,14 +65,6 @@
  * 깊이 우선 탐색(DFS)
  * DFS 알고리즘은 시작 정점에서 출발해 동일 경로의 마지막 정점까지 순회하고 다시 반대 방향으로 돌아와 다음 경로를 찾아가는 식으로 진행된다.
  * DFS에서는 시작 정점이 필요 없다. 그래프 G에서 미방문 상태의 정점 v를 차례로 방문한다.
- 
- * v를 '방문했음'으로 표시한다.
- * '방문하지 않은' v의 인접 정점 w에 대해
-   * 정점 w를 방문한다.
- * v를 '탐색했음'으로 표시한다.
- * u의 방문 시간: d[u]
- * u의 탐색 시간: f[u]
- * u의 선행자: p[u]
  */
 
 import Dictionary from '../dictionary/dictionary.mjs';
@@ -127,6 +109,17 @@ export default class Graph {
         return color;
     }    
 
+    /**
+     * 큐 Q를 생성한다.
+     * v를 '방문했음'으로 표시하고 Q에 v를 추가한다.
+     * Q는 비어 있지 않으므로 다음 과정을 밟는다.
+       * u를 Q에서 삭제한다.
+       * u를 '방문했음'으로 표시한다.
+       * u의 '방문하지 않은' 모든 인접 정점을 Q에 넣는다.
+       * u를 '탐색했음'으로 표시한다.
+     * v에서 u까지의 거리: d[u]
+     * v에서 다른 모든 정점 u까지의 최단 경로를 계산하기 위한 선행자(predecessor):pred[u]
+     */
     bfs(v) {
         let vertices = this.vertices;
         let color = this.initializeColor();
@@ -158,6 +151,59 @@ export default class Graph {
         return {
             distance: d,
             predecessors: pred,
+        };
+    }
+    /** 
+     * v를 '방문했음'으로 표시한다.
+     * '방문하지 않은' v의 인접 정점 w에 대해
+       * 정점 w를 방문한다.
+     * v를 '탐색했음'으로 표시한다.
+     * u의 방문 시간: d[u]
+     * u의 탐색 시간: f[u]
+     * u의 선행자: p[u]
+     * */
+    dfs() {
+        let vertices = this.vertices;
+        let color = this.initializeColor();
+        let d = [];
+        let f = [];
+        let p = [];
+        let time = 0;
+        let that = this;
+
+        // dfsVisit(u, color, d, f, p) {
+        function dfsVisit(u) {
+            console.log('방문 ' + u);
+            color[u] = 'grey';
+            d[u] = ++time;
+            let neighbors = that.adjList.get(u);
+            for (let i = 0, len = neighbors.length; i < len; i++) {
+                let w = neighbors[i];
+                if (color[w] === 'white') {
+                    p[w] = u;
+                    dfsVisit(w);
+                }
+            }
+            color[u] = 'black';
+            f[u] = ++time;
+            console.log('탐색 ' + u);
+        }
+
+        for (let i = 0, len = vertices.length; i < len; i++) {
+            f[vertices[i]] = 0;
+            d[vertices[i]] = 0;
+            p[vertices[i]] = null;
+        }
+
+        for (let i = 0, len = vertices.length; i < len; i++) {
+            if (color[vertices[i]] === 'white') {
+                dfsVisit(vertices[i]);
+            }
+        }
+        return {
+            discovery: d,
+            finished: f,
+            predecessors: p
         };
     }
 }

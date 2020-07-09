@@ -34,3 +34,18 @@ for (let i = 1, len = myVertices.length; i < len; i++) {
     }
     console.log(s);
 }
+
+// dfs test
+graph = new Graph();
+myVertices = ['A', 'B', 'C', 'D', 'E', 'F'];
+for (let i = 0, len = myVertices.length; i < len; i++) {
+    graph.addVertex(myVertices[i]);
+}
+graph.addEdge('A', 'C');
+graph.addEdge('A', 'D');
+graph.addEdge('B', 'D');
+graph.addEdge('B', 'E');
+graph.addEdge('C', 'F');
+graph.addEdge('F', 'E');
+let result = graph.dfs();
+console.log(result);
