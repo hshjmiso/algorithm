@@ -86,28 +86,61 @@
 
 ## if문
 * [두 수 비교하기](https://www.acmicpc.net/problem/1330)
+  * [solution](./02_if/1330.js)
 * [시험 성적](https://www.acmicpc.net/problem/9498)
+  * [solution](./02_if/9498.js)
 * [윤년](https://www.acmicpc.net/problem/2753)
+  * [solution](./02_if/2753.js)
 * [사분면 고르기](https://www.acmicpc.net/problem/14681)
+  * [solution](./02_if/14681.js)
 * [알람 시계](https://www.acmicpc.net/problem/2884)
+  * [solution](./02_if/2884.js)
 
 ## for문
 * [구구단](https://www.acmicpc.net/problem/2739)
+  * [solution](./03_for/2739.js)
 * [A+B - 3](https://www.acmicpc.net/problem/10950)
+  * [solution](./03_for/10950.js)
 * [합](https://www.acmicpc.net/problem/8393)
+  * [solution](./03_for/8393.js)
 * [빠른 A+B](https://www.acmicpc.net/problem/15552)
+  * [solution](./03_for/15552.js)
 * [N 찍기](https://www.acmicpc.net/problem/2741)
+  * [solution](./03_for/2741.js)
 * [기찍 N](https://www.acmicpc.net/problem/2742)
+  * [solution](./03_for/2742.js)
 * [A+B - 7](https://www.acmicpc.net/problem/11021)
+  * [solution](./03_for/11021.js)
 * [A+B - 8](https://www.acmicpc.net/problem/11022)
+  * [solution](./03_for/11022.js)
 * [별 찍기 - 1](https://www.acmicpc.net/problem/2438)
+  * [solution](./03_for/2438.js)
 * [별 찍기 - 2](https://www.acmicpc.net/problem/2439)
+  * [solution](./03_for/2439.js)
 * [X보다 작은 수](https://www.acmicpc.net/problem/10871)
+  * [solution](./03_for/10871.js)
 
 ## while문
 * [A+B - 5](https://www.acmicpc.net/problem/10952)
+  * [solution](./04_while/10952.js)
 * [A+B - 4](https://www.acmicpc.net/problem/10951)
+  * [solution](./04_while/10951.js)
 * [더하기 사이클](https://www.acmicpc.net/problem/1110)
+  * [solution](./04_while/1110.js)
+
+## 실습 1
+* [평균 점수](https://www.acmicpc.net/problem/10039)
+  * [solution](./05_practice_01/10039.js)
+* [상근날드](https://www.acmicpc.net/problem/5543)
+  * [solution](./05_practice_01/5543.js)
+* [세 수](https://www.acmicpc.net/problem/10817)
+  * [solution](./05_practice_01/10817.js)
+* [별 찍기 - 13](https://www.acmicpc.net/problem/2523)
+  * [solution](./05_practice_01/2523.js)
+* [별 찍기 - 9](https://www.acmicpc.net/problem/2446)
+  * [solution](./05_practice_01/2446.js)
+* [별 찍기 - 21](https://www.acmicpc.net/problem/10996)
+  * [solution](./05_practice_01/10996.js)
 
 ### crawling
 ``` javascript
