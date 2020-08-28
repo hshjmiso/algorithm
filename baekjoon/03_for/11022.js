@@ -9,8 +9,7 @@ let input = [];
 
 rl.on('line', function (line) {
     input.push(line);
-  })
-  .on('close', function () {
+}).on('close', function () {
     let answer = '';
     let count = +input[0];
     let temp = null;

@@ -9,8 +9,7 @@ let input = [];
 
 rl.on('line', function (line) {
     input = line.split(' ').map(v => +v);
-})
-.on('close', function () {
+}).on('close', function () {
     console.log(input.sort((a, b) => a - b)[1]);
     process.exit();
 });

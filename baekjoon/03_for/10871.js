@@ -9,8 +9,7 @@ let input = [];
 
 rl.on('line', function (line) {
     input.push(line);
-  })
-  .on('close', function () {
+}).on('close', function () {
     let answer = '';
     let X = +input[0].split(' ')[1];
     input[1].split(' ').forEach(v => {

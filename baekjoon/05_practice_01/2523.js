@@ -7,20 +7,20 @@ const rl = readline.createInterface({
 
 rl.on("line", function(num) {
     let answer = '';
-let i = 0;
-for (i = 0; i < num; i++) {
-    for (j = 0; j <= i; j++) {
-        answer += '*';
+    let i = 0;
+    for (i = 0; i < num; i++) {
+        for (j = 0; j <= i; j++) {
+            answer += '*';
+        }
+        answer += '\n';
     }
-    answer += '\n';
-}
-for (i = num - 1; i >= 0; i--) {
-    for (j = 1; j <= i; j++) {
-        answer += '*';
+    for (i = num - 1; i >= 0; i--) {
+        for (j = 1; j <= i; j++) {
+            answer += '*';
+        }
+        answer += '\n';
     }
-    answer += '\n';
-}
-console.log(answer);
+    console.log(answer);
     rl.close();
 }).on("close", function() {
     process.exit();

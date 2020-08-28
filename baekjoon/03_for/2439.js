@@ -6,7 +6,7 @@ const rl = readline.createInterface({
 });
 
 rl.on("line", function(num) {
-    let answer = '';
+  let answer = '';
   for (let i = 1; i <= num; i++) {
       for (let j = 0; j < num - i; j++) {
           answer += ' ';
@@ -16,7 +16,7 @@ rl.on("line", function(num) {
       }
       answer += '\n';
   }
-    console.log(answer);
+  console.log(answer);
 }).on("close", function() {
   process.exit();
 });

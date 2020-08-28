@@ -9,8 +9,7 @@ let input = [];
 
 rl.on('line', function (line) {
     input = line.split(' ').map((el) => parseInt(el));
-  })
-  .on('close', function () {
+}).on('close', function () {
     let m = input[1] - 45;
     let h = input[0];
     

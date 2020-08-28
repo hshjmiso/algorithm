@@ -9,8 +9,7 @@ let input = [];
 
 rl.on('line', function (line) {
     input.push(line);
-  })
-  .on('close', function () {
+}).on('close', function () {
     let answer = input.reduce((acc, cur) => cur < 40 ? acc + 40 : acc + +cur, 0);
     console.log(answer / 5);
     process.exit();
