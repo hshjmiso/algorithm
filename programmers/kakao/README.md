@@ -29,6 +29,8 @@
   * [solution](./2018_kakao/17683.js)
 * [[3차] 압축](https://programmers.co.kr/learn/courses/30/lessons/17684)
   * [solution](./2018_kakao/17684.js)
+* [[3차] 파일명 정렬](https://programmers.co.kr/learn/courses/30/lessons/17686)
+  * [solution](./2018_kakao/17686.js)
 * [[3차] n진수 게임](https://programmers.co.kr/learn/courses/30/lessons/17687)
   * [solution](./2018_kakao/17687.js)
 ## 2019 카카오 개발자 겨울 인턴십
