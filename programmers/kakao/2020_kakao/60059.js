@@ -1,5 +1,5 @@
 // 자물쇠와 열쇠
-// fail 72.0
+// fail 85.0
 function solution(key, lock) {
     let [checkY, checkX] = checkCoord(lock);
     
@@ -47,10 +47,10 @@ function checkCoord(lock) {
 
 function checkKey(key, keyY, keyX, lock, checkLockY, checkLockX) {
     let [y, yLen] = checkLockY;
-    let [x, xLen] = checkLockY;
+    let [x, xLen] = checkLockX;
     let temp = 0;
-    for (;y < yLen; y++, keyY++) {
-        for (;x < xLen; x++, keyX++) {
+    for (;y <= yLen; y++, keyY++) {
+        for (;x <= xLen; x++, keyX++) {
             temp = lock[y][x] + key[keyY][keyX];
             if (temp !== 1) {
                 return false;

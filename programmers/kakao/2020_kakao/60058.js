@@ -15,7 +15,7 @@ function recursive(p) {
         return '';
     
     let [u, v] = divideBracket(p);
-    console.log(u, v);
+    // console.log(u, v);
     if (checkBracket(u)) {
         return u + recursive(v);
         // answer += u;

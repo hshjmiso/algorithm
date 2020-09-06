@@ -15,8 +15,10 @@
 ### unsolved
 * [괄호 변환](https://programmers.co.kr/learn/courses/30/lessons/60058)]
   * [solution](./2020_kakao/60058.js)
+  * [explanation](./2020_kakao/60058_ex.js)
 * [자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059)]
   * [solution](./2020_kakao/60059.js)
+  * [explanation](./2020_kakao/60059_ex.js)
 * [가사 검색](https://programmers.co.kr/learn/courses/30/lessons/60060)]
   * [solution](./2020_kakao/60060.js)
 * [기둥과 보 설치](https://programmers.co.kr/learn/courses/30/lessons/60061)]
