@@ -1,5 +1,4 @@
 # kakao
-
 * [2020 KAKAO BLIND RECRUITMENT](#2020-kakao-blind-recruitment)
 * [2019 KAKAO BLIND RECRUITMENT](#2019-kakao-blind-recruitment)
 * [2018 KAKAO BLIND RECRUITMENT](#2018-kakao-blind-recruitment)
@@ -21,6 +20,7 @@
   * [explanation](./2020_kakao/60059_ex.js)
 * [가사 검색](https://programmers.co.kr/learn/courses/30/lessons/60060)]
   * [solution](./2020_kakao/60060.js)
+  * [explanation](./2020_kakao/60060_ex.js)
 * [기둥과 보 설치](https://programmers.co.kr/learn/courses/30/lessons/60061)]
   * [solution](./2020_kakao/60061.js)
 * [외벽 점검](https://programmers.co.kr/learn/courses/30/lessons/60062)]
@@ -39,6 +39,7 @@
 ### unsolved
 * [후보키](https://programmers.co.kr/learn/courses/30/lessons/42890)]
   * [solution](./2019_kakao/42890.js)
+  * [explanation](./2019_kakao/42890_ex.js)
 * [무지의 먹방 라이브](https://programmers.co.kr/learn/courses/30/lessons/42891)]
   * [solution](./2019_kakao/42891.js)
 * [길 찾기 게임](https://programmers.co.kr/learn/courses/30/lessons/42892)]
@@ -73,8 +74,10 @@
 ### unsolved
 * [[1차] 추석 트래픽](https://programmers.co.kr/learn/courses/30/lessons/17676)]
   * [solution](./2018_kakao/17676.js)
+  * [explanation](./2018_kakao/17676_ex.js)
 * [[1차] 셔틀버스](https://programmers.co.kr/learn/courses/30/lessons/17678)]
   * [solution](./2018_kakao/17678.js)
+  * [explanation](./2018_kakao/17678_ex.js)
 * [[3차] 자동완성](https://programmers.co.kr/learn/courses/30/lessons/17685)]
   * [solution](./2018_kakao/17685.js)
 
