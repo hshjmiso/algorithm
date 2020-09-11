@@ -42,6 +42,7 @@
   * [explanation](./2019_kakao/42890_ex.js)
 * [무지의 먹방 라이브](https://programmers.co.kr/learn/courses/30/lessons/42891)]
   * [solution](./2019_kakao/42891.js)
+  * [explanation](./2019_kakao/42891_ex.js)
 * [길 찾기 게임](https://programmers.co.kr/learn/courses/30/lessons/42892)]
   * [solution](./2019_kakao/42892.js)
 * [매칭 점수](https://programmers.co.kr/learn/courses/30/lessons/42893)]
@@ -96,6 +97,7 @@
   * [solution](./2019_kakao_Internship/64063.js)
 * [징검다리 건너기](https://programmers.co.kr/learn/courses/30/lessons/64062)]
   * [solution](./2019_kakao_Internship/64062.js)
+  * [explanation](./2019_kakao_Internship/64062_ex.js)
   
 ## 2020 카카오 인턴십
 
@@ -108,8 +110,10 @@
   * [solution](./2020_kakao_Internship/67257.js)
 * [보석 쇼핑](https://programmers.co.kr/learn/courses/30/lessons/67258)]
   * [solution](./2020_kakao_Internship/67258.js)
+  * [explanation](./2020_kakao_Internship/67258_ex.js)
 * [경주로 건설](https://programmers.co.kr/learn/courses/30/lessons/67259)]
   * [solution](./2020_kakao_Internship/67259.js)
+  * [explanation](./2020_kakao_Internship/67259_ex.js)
 * [동굴 탐험](https://programmers.co.kr/learn/courses/30/lessons/67260)]
   * [solution](./2020_kakao_Internship/67260.js)
 
