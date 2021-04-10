@@ -1,17 +1,17 @@
 # 문제 모음
-* [2021 KAKAO BLIND RECRUITMENT]()
-* [2020 KAKAO BLIND RECRUITMENT]()
-* [2019 KAKAO BLIND RECRUITMENT]()
-* [2018 KAKAO BLIND RECRUITMENT]()
-* [2019 카카오 개발자 겨울 인턴십]()
-* [2020 카카오 인턴십]()
-* [2017 카카오코드 예선]()
-* [2017 카카오코드 본선]()
-* [Summer/Winter Coding(~2018)]()
-* [Summer/Winter Coding(2019)]()
-* [월간 코드 챌린지 시즌1]()
-* [찾아라 프로그래밍 마에스터]()
-* [2017 팁스타운]()
+* [2021 KAKAO BLIND RECRUITMENT](#2021-kakao-blind-recruitment)
+* [2020 KAKAO BLIND RECRUITMENT](#2020-kakao-blind-recruitment)
+* [2019 KAKAO BLIND RECRUITMENT](#2019-kakao-blind-recruitment)
+* [2018 KAKAO BLIND RECRUITMENT](#2018-kakao-blind-recruitment)
+* [2019 카카오 개발자 겨울 인턴십](#2019-카카오-개발자-겨울-인턴십)
+* [2020 카카오 인턴십](#2020-카카오-인턴십)
+* [2017 카카오코드 예선](#2017-카카오코드-예선)
+* [2017 카카오코드 본선](#2017-카카오코드-본선)
+* [Summer/Winter Coding(~2018)](#summerwinter-coding2018)
+* [Summer/Winter Coding(2019)](#summerwinter-coding2019)
+* [월간 코드 챌린지 시즌1](#월간-코드-챌린지-시즌1)
+* [찾아라 프로그래밍 마에스터](#찾아라-프로그래밍-마에스터)
+* [2017 팁스타운](#2017-팁스타운)
 
 
 
@@ -51,6 +51,11 @@ function checkPeriod(str) {
 }
 ```
 </details>
+<<<<<<< HEAD
+=======
+
+* RegExp - ```/[^-_\.a-z0-9]/g, /\.\.+/g, /^\./, /\.$/```
+>>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/72411">메뉴 리뉴얼</a></summary>
@@ -101,11 +106,75 @@ function getSubsets(order) {
 }
 ```
 </details>
+<<<<<<< HEAD
+=======
+
+* Subset
+>>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/72412">순위 검색</a></summary>
         
 ```javascript
+function solution(info, query) {
+    const answer = [];
+    const infoMap = {};
+    
+    function combination(array, score, start) {
+        const key = array.join("");
+        const value = infoMap[key];
+        
+        if (value) {
+            infoMap[key].push(score);
+        } else {  
+            infoMap[key] = [score];
+        }
+        
+        for (let i = start; i < array.length; i++) {
+            const temp = [...array];
+            temp[i] = "-";
+            combination(temp, score, i + 1);
+        }
+    }
+    
+    for (const e of info) {
+        const splited = e.split(" ");
+        const score = Number(splited.pop());
+        combination(splited, score, 0);
+    }
+    
+    for (const key in infoMap) {
+        infoMap[key] = infoMap[key].sort((a, b) => a - b);
+    }
+    
+    for (const e of query) {
+        const splited = e.replace(/ and /g, " ").split(" ");
+        const score = Number(splited.pop());
+        const key = splited.join("");
+        const array = infoMap[key];
+        
+        if (array) {
+            let start = 0;
+            let end = array.length;
+            while (start < end) {
+                const mid = Math.floor((start + end) / 2);
+                
+                if (array[mid] >= score) {
+                    end = mid;
+                } else if (array[mid] < score) {
+                    start = mid + 1;
+                }
+            }
+            
+            const result = array.length - start;
+            answer.push(result);
+        } else {
+            answer.push(0);
+        }
+    }
+    
+    return answer;
+}
 ```
 </details>
 
@@ -404,6 +473,8 @@ function solution(words, queries) {
 ```
 </details>
 
+* Trie
+
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/60061">기둥과 보 설치</a></summary>
         
@@ -485,8 +556,76 @@ function solution(N, stages) {
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/42890">후보키</a></summary>
         
 ```javascript
+function solution(relation) {
+    let answer = 0;
+    let subsets = getSubsets(relation[0].length);
+    subsets.sort((a, b) => a.length - b.length);
+
+    let subset = null;
+    for (let i = 0, len = subsets.length; i < len; i++) {
+        subset = subsets[i];
+        if (subset.length) {
+            if (relation.length === getRowCount(relation, subset)) {
+                answer++;
+                subsets = excludeSubset(subsets, subset);
+                i = 0;
+                len = subsets.length;
+            }    
+        }       
+    }
+    
+    return answer;
+}
+
+function getSubsets(len) {
+    const subsets = [];
+    const indexs = new Array(len).fill(0).map((v, i) => i);
+    const flags = new Array(len).fill(false);
+    
+    function recursion (depth) {
+        if (depth === len) {
+            subsets.push(indexs.filter((v, i) => flags[i]));
+            return;
+        }
+        flags[depth] = true;
+        recursion(depth + 1);
+        flags[depth] = false;
+        recursion(depth + 1);
+    }
+    recursion(0);
+    
+    return subsets;
+}
+
+function getRowCount(relation, subset) {
+    let obj = {};
+    let key = '';
+    
+    for (let i = 0, iLen = relation.length; i < iLen; i++) {
+        key = '';
+        for (let j = 0, jLen = subset.length; j < jLen; j++) {
+            key += relation[i][subset[j]];
+        }
+        obj[key] = 1;
+    }
+    return Object.keys(obj).length;
+}
+
+function excludeSubset(subsets, subset) {
+    return subsets.filter(v => {
+        let check = false;
+        for(let i = 0, len = subset.length; i < len; i++) {
+            if (!v.includes(subset[i])) {
+                check = true;
+            }
+        }
+        return check;
+    })
+}
 ```
 </details>
+
+* Subset
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/42891">무지의 먹방 라이브</a></summary>
@@ -587,6 +726,11 @@ function solution(nodeinfo) {
 }
 ```
 </details>
+<<<<<<< HEAD
+=======
+
+* BinaryTree
+>>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/42893">매칭 점수</a></summary>
@@ -626,6 +770,11 @@ function solution(word, rawPages) {
 }
 ```
 </details>
+<<<<<<< HEAD
+=======
+
+* RegExp - ```/<meta property="og:url" content="([^"]+)"\/>/i, /<[^>]+>/g, /[^a-zA-Z]/, /<a href="([^"]+)">/i```
+>>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/42894">블록 게임</a></summary>
@@ -1019,6 +1168,11 @@ function scaleUpSound(time, sound) {
 }
 ```
 </details>
+<<<<<<< HEAD
+=======
+
+* A, B, C, D, E, F, G, A#   , C#   , D#   , F#   , G#, -> A, B, C, D, E, F, G, A + 7, C + 7, D + 7, F + 7, G + 7
+>>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/17684">[3차] 압축</a></summary>
@@ -1175,6 +1329,8 @@ function solution(s) {
 ```
 </details>
 
+* RegExp - ```/[{}]/g```
+
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/64064">불량 사용자</a></summary>
         
@@ -1226,6 +1382,10 @@ function solution(stones, k) {
 ```
 </details>
 
+<<<<<<< HEAD
+=======
+* 이분탐색
+>>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 ## 2020 카카오 인턴십
 
@@ -1292,8 +1452,84 @@ function solution(numbers, hand) {
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/67257">수식 최대화</a></summary>
         
 ```javascript
+function solution(expression) {
+    const operatorList = ['+', '-', '*'];
+    const cases = getCases(operatorList);
+
+    const numbers = expression.match(/\d+/g);
+    const operators = expression.match(/[+*-]/g);
+    expression = [+numbers.shift()];
+    for (let i = 0, len = numbers.length; i < len; i++) {
+        expression.push(operators.shift());
+        expression.push(+numbers.shift());
+    }
+    
+    let answer = [];
+    let temp = [];
+    let i = 0; // operator index
+    let j = 0; // expression index
+    let operator = '';
+    let x = 0;
+    let y = 0;
+    
+    cases.forEach(oCase => {
+        temp = [...expression];
+        i = 0;
+        
+        while(temp.length > 1) {
+            operator = oCase[i];
+            j = temp.indexOf(operator);
+            if (j !== -1) {
+                x = temp[j - 1];
+                y = temp[j + 1];
+                switch (operator) {
+                    case '+':
+                        temp[j - 1] = x + y;
+                        break;
+                    case '-':
+                        temp[j - 1] = x - y;
+                        break;
+                    case '*':
+                        temp[j - 1] = x * y;
+                        break;
+                }
+                temp.splice(j, 2);
+            } else {
+                i++;
+            }
+        }
+        answer.push(Math.abs(temp[0]));
+    });
+    
+    // console.log(answer);
+    return Math.max(...answer);
+}
+
+function getCases(operatorList) {
+    const cases = [];
+    const len = operatorList.length;
+    
+    function recursion(list, remainList, depth) {
+        if (depth === len) {
+            cases.push(list);
+            return;
+        }
+    
+        remainList.forEach((remain, i) => {
+            const tempArr = [...remainList];
+            tempArr.splice(i, 1);
+            recursion([...list, remain], tempArr, depth + 1);
+        });
+    }
+    
+    recursion([], operatorList, 0);
+    return cases;
+}
 ```
 </details>
+
+* RegExp - ```/\d+/g, /[+*-]/g```
+* getCases()
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/67258">보석 쇼핑</a></summary>
@@ -1394,6 +1630,11 @@ function solution(board) {
 }
 ```
 </details>
+<<<<<<< HEAD
+=======
+
+* BFS
+>>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/67260">동굴 탐험</a></summary>
@@ -1456,6 +1697,46 @@ function solution(skill, skill_trees) {
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/49994">방문 길이</a></summary>
         
 ```javascript
+function solution(dirs) {
+    let answer = new Map();
+    let prevY = 0;
+    let prevX = 0;
+    let y = 0;
+    let x = 0;
+    let key = ''
+    
+    dirs.split('').forEach(dir => {
+        switch(dir) {
+            case 'U':
+                y++;
+                break;
+            case 'D':
+                y--;
+                break;
+            case 'R':
+                x++;
+                break;
+            case 'L':
+                x--;
+                break;
+        }
+        
+        if (y > 5) y = 5;
+        if (y < -5) y = -5;
+        if (x > 5) x = 5;
+        if (x < -5) x = -5;
+        
+        if (prevY !== y || prevX !== x) {
+            key = prevY < y ? `${prevY}|${y}|` : `${y}|${prevY}|`
+            key += prevX < x ? `${prevX}|${x}` : `${x}|${prevX}`;
+            answer.set(key, 1);
+            prevY = y;
+            prevX = x;
+        } 
+    });
+    
+    return answer.size;
+}
 ```
 </details>
 
@@ -1585,6 +1866,23 @@ function solution(n)
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/12987">숫자 게임</a></summary>
         
 ```javascript
+function solution(A, B) {
+    const len = A.length;
+    let answer = 0;
+    let left = 0;
+    
+    A.sort((a, b) => a - b);
+    B.sort((a, b) => a - b);
+    
+    for (let i = 0; i < len; i++) {
+        if (A[left] < B[i]) {
+            left++;
+            answer++;
+        }    
+    }
+    
+    return answer;
+}
 ```
 </details>
 
@@ -1867,8 +2165,40 @@ function solution(s) {
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/1844">게임 맵 최단거리</a></summary>
         
 ```javascript
+function solution(maps) {
+    const yLen = maps.length;
+    const xLen = maps[0].length;
+    const yPos = [1, -1, 0, 0];
+    const xPos = [0, 0, 1, -1];
+    const q = [[0, 0, 1]];
+    
+    while(q.length) {
+        const [y, x, count] = q.shift();
+        
+        if (y === yLen - 1 && x === xLen - 1) {
+            return count;
+        }
+        
+        for (let i = 0; i < 4; i++) {
+            const newY = y + yPos[i];
+            const newX = x + xPos[i];
+            if (newY < 0 || newY >= yLen || newX < 0 || newX >= xLen) {
+                continue;
+            }
+            if (maps[newY][newX] === 0) continue; // 벽
+            if (maps[newY][newX] === 2) continue; // 방문
+            
+            maps[newY][newX] = 2;
+            q.push([newY, newX, count + 1]);
+        }
+    }
+    
+    return -1;
+}
 ```
 </details>
+
+* BFS
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/1845">폰켓몬</a></summary>
@@ -1891,6 +2221,21 @@ function solution(nums) {
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/12973">짝지어 제거하기</a></summary>
         
 ```javascript
+function solution(s)
+{
+    const answer = [];
+    
+    for (let i = 0, len = s.length; i < len; i++) {
+        answer.push(s[i]);
+        
+        if (answer[answer.length - 1] === answer[answer.length - 2]) {
+            answer.pop();
+            answer.pop();
+        }
+    }
+    
+    return answer.length ? 0 : 1;
+}
 ```
 </details>
 
