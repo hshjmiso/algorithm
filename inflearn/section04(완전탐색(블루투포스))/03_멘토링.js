@@ -24,8 +24,21 @@ M번의 수학성적이 주어지면 멘토와 멘티가 되는 짝을 만들 �
 
 // 등수를 잘 못 이해함..
 function solution(test) {
-    let answer = 0;
-    return answer;
+    let answer = {};
+    let N = test[0].length;
+    let M = test.length;
+    let mentoring = '';
+
+    for (let k = 0; k < M; k++) {
+        for (let i = 0; i < N - 1; i++) {
+            for (let j = i + 1; j < N; j++) {
+                mentoring = `${test[k][i]},${test[k][j]}`;
+                answer[mentoring] = answer[mentoring] ? answer[mentoring] + 1 : 1;
+            }
+        }
+    }
+
+    return Object.values(answer).filter(v => v === M).length;
 }
 
 

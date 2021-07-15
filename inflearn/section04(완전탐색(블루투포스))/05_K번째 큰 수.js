@@ -17,10 +17,40 @@
 143
  */
 
-function solution() {
-    let answer = 0;
-    return answer;
+// 3장 기준!!
+function solution(K, cards) {
+    let set = new Set();
+    let len = cards.length;
+    
+    for (let i = 0; i < len; i++) {
+        for (let j = i + 1; j < len; j++) {
+            for (let k = j + 1; k < len; k++) {
+                set.add(cards[i] + cards[j] + cards[k]);
+            }
+        }
+    }
+
+    return Array.from(set).sort((a, b) => b - a)[K - 1];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function solution2(n, k, card){
     let answer;
@@ -37,4 +67,5 @@ function solution2(n, k, card){
     return answer;
 }
 
-console.log(solution([]));
+console.log(solution(3,
+    [13, 15, 34, 23, 45, 65, 33, 11, 26, 42]));

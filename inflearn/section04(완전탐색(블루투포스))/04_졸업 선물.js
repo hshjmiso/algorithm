@@ -29,6 +29,32 @@
 
 // 최소비용으로 정렬 후 한 가지가 할인이 되었다는 가정으로 전부 확인해본다.
 function solution(budget, costs) {
+    let answer = 0;
+    let len = costs.length;
+    let tempBudget = 0;
+    let tempCost = 0;
+    let count = 0;
+
+    costs.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1]));
+    for (let i = 0; i < len; i++) {
+        tempBudget = budget - (costs[i][0] / 2 + costs[i][1]);
+        if (tempBudget < 0) continue;
+        count = 1;
+        for (let j = 0; j < len; j++) {
+            if (i === j) continue;
+            tempCost = costs[j][0] + costs[j][1];
+
+            if (tempBudget - tempCost >= 0) {
+                tempBudget -= tempCost;
+                count++;
+            } else {
+                break;
+            }
+        }
+        if (answer < count) answer = count;
+    }
+    
+    return answer;
 }
 
 
