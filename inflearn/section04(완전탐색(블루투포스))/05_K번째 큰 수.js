@@ -33,25 +33,6 @@ function solution(K, cards) {
     return Array.from(set).sort((a, b) => b - a)[K - 1];
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function solution2(n, k, card){
     let answer;
     let tmp = new Set();

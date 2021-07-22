@@ -41,26 +41,6 @@ function solution(test) {
     return Object.values(answer).filter(v => v === M).length;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function solution2(test){
     let answer=0;
     m=test.length;

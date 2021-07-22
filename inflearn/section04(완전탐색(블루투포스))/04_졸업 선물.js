@@ -57,27 +57,6 @@ function solution(budget, costs) {
     return answer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function solution2(m, product){
     let answer=0;
     let n=product.length;
