@@ -28,7 +28,7 @@ Constraints:
 
 /**
  * @param {number} n
- * @return {boolean}
+ * @return {boolean}₩`
  */
  var checkPowersOfThree = function(n) {
     let answer = false;
