@@ -51,11 +51,8 @@ function checkPeriod(str) {
 }
 ```
 </details>
-<<<<<<< HEAD
-=======
 
 * RegExp - ```/[^-_\.a-z0-9]/g, /\.\.+/g, /^\./, /\.$/```
->>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/72411">메뉴 리뉴얼</a></summary>
@@ -106,11 +103,8 @@ function getSubsets(order) {
 }
 ```
 </details>
-<<<<<<< HEAD
-=======
 
 * Subset
->>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/72412">순위 검색</a></summary>
