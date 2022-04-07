@@ -720,11 +720,9 @@ function solution(nodeinfo) {
 }
 ```
 </details>
-<<<<<<< HEAD
-=======
 
 * BinaryTree
->>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
+
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/42893">매칭 점수</a></summary>
@@ -764,11 +762,9 @@ function solution(word, rawPages) {
 }
 ```
 </details>
-<<<<<<< HEAD
-=======
 
 * RegExp - ```/<meta property="og:url" content="([^"]+)"\/>/i, /<[^>]+>/g, /[^a-zA-Z]/, /<a href="([^"]+)">/i```
->>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
+
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/42894">블록 게임</a></summary>
@@ -1162,11 +1158,8 @@ function scaleUpSound(time, sound) {
 }
 ```
 </details>
-<<<<<<< HEAD
-=======
 
 * A, B, C, D, E, F, G, A#   , C#   , D#   , F#   , G#, -> A, B, C, D, E, F, G, A + 7, C + 7, D + 7, F + 7, G + 7
->>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/17684">[3차] 압축</a></summary>
@@ -1376,10 +1369,7 @@ function solution(stones, k) {
 ```
 </details>
 
-<<<<<<< HEAD
-=======
 * 이분탐색
->>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 ## 2020 카카오 인턴십
 
@@ -1624,11 +1614,9 @@ function solution(board) {
 }
 ```
 </details>
-<<<<<<< HEAD
-=======
+
 
 * BFS
->>>>>>> b35af805ac338e49097fdac20a11a0199fe5ede0
 
 <details>
     <summary><a href="https://programmers.co.kr/learn/courses/30/lessons/67260">동굴 탐험</a></summary>
